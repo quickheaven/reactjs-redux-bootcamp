@@ -1,16 +1,9 @@
 import React, { Component } from "react";
 
 class App extends Component {
+    state = { displayBio: false };
 
-    constructor() {
-        super();
-        this.state = { displayBio: false };
-
-        this.toggleDispalyBio = this.toggleDisplayBio.bind(this);
-    }
-
-    toggleDisplayBio() {
-        //this.state.displayBio = !this.state.displayBio; // Bad practice! Never Directly Modify State
+    toggleDisplayBio = () => {
         this.setState({ displayBio: !this.state.displayBio });
     }
 
@@ -26,11 +19,11 @@ class App extends Component {
                             <p>I live in Toronto, and code every day.</p>
                             <p>My favorite language is Javascript, and I think React.js is awesome.</p>
                             <p>Besides coding, I also love music and ramen!</p>
-                            <button onClick={this.toggleDispalyBio}>Show less</button>
+                            <button onClick={this.toggleDisplayBio}>Show less</button>
                         </div>
                     ) : (
                             <div>
-                                <button onClick={this.toggleDispalyBio}>Read more</button>
+                                <button onClick={this.toggleDisplayBio}>Read more</button>
                             </div>
                         )
                 }
