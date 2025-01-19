@@ -13,9 +13,16 @@ console.log('componentClassInstance', componentClassInstance);
 
 class App extends Component {
 
-    constructor() {
-        super();
-        this.state = { displayBio: false };
+    // These is similar to constructor() but shorter.
+    state = {displayBio: false};
+
+    toggleDisplayBio = () => {
+        this.setState({ displayBio: !this.state.displayBio});
+    }
+
+    //constructor() {
+    //    super();
+    //    this.state = { displayBio: false };
         /*
          * not ideal.
         this.readMore = () => {
@@ -23,8 +30,8 @@ class App extends Component {
         }
         */
         // this.readMore = this.readMore.bind(this);
-        this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
-    }
+    //    this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+    //}
     /*
     readMore() {
         //this.state.displayBio = true; // not ideal. use this.setState()
@@ -35,10 +42,12 @@ class App extends Component {
         this.setState({ displayBio: false });
     }
     */
+   /*
     toggleDisplayBio() {
         this.setState({ displayBio: !this.state.displayBio });
     }
-
+    */
+   // render = () => {}
     render() {
         return (
             <div>
