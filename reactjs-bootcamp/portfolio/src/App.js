@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
 
+class RegularClass {}
+class ComponentClass extends Component {}
+
+const regularClassInstance = new RegularClass();
+const componentClassInstance = new ComponentClass();
+
+console.log('regulaClassInstance', regularClassInstance);
+console.log('componentClassInstance', componentClassInstance);
+
 class App extends Component {
 
     render() {
@@ -14,3 +23,5 @@ class App extends Component {
 }
 
 export default App;
+
+
