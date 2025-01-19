@@ -5,7 +5,7 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 
-
+/*
 class Animal {
 
     constructor(name, age) {
@@ -46,3 +46,4 @@ const lion1 = new Lion('Mufasa', 20, 'golden', 25);
 lion1.speak();
 lion1.roar();
 console.log(lion1);
+*/
