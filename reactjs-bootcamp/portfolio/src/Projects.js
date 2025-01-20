@@ -3,19 +3,9 @@ import PROJECTS from './data/projects';
 
 class Project extends Component {
     render() {
-        console.log('this.props', this.props);
 
         // destructuring syntax
         const { title, image, description, link } = this.props.project;
-
-        //const title = this.props.project.title;
-        //const image = this.props.project.image;
-        //const description = this.props.project.description
-        //const link = this.props.project.link;
-
-        //return (
-        //    <div>{this.props.project.title}</div>
-        //)
 
         return (
             <div style={{ display: 'inline-block', width: 300, margin: 10 }}>
