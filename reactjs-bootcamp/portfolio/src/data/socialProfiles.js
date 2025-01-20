@@ -6,7 +6,7 @@ import twitterIcon from '../assets/twitter_icon.png';
 const SOCIAL_PROFILES = [
     {
         id: 1,
-        link: 'mailto:ajie.io@yahoo.com',
+        link: 'mailto:quickheaven@gmail.com',
         image: emailIcon
     },
     {
@@ -24,6 +24,6 @@ const SOCIAL_PROFILES = [
         link: 'https://twitter.com/quickheaven',
         image: twitterIcon
     }
-]
+];
 
 export default SOCIAL_PROFILES;
