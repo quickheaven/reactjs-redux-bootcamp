@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Projects from './Projects';
 
 /*
 class RegularClass {}
@@ -70,9 +71,11 @@ class App extends Component {
                         </div>
                     )
                 }
-            </div>
+                <hr />
+                <Projects />
+            </div>            
         )
-    }
+    }    
 }
 
 export default App;
