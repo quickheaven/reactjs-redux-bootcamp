@@ -22,6 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-dist
+/.cache
+/dist
 
 .parcel-cache/
+.gitignore\357\200\272Zone.Identifier
