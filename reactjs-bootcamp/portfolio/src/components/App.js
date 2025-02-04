@@ -7,16 +7,15 @@ import Header from './Header';
 
 class App extends Component {
 
-    state = {displayBio: false};
+    state = { displayBio: false };
 
     toggleDisplayBio = () => {
-        this.setState({ displayBio: !this.state.displayBio});
+        this.setState({ displayBio: !this.state.displayBio });
     }
 
     render() {
         return (
             <div>
-                <Header />
                 <img src={profile} alt='profile' className='profile' />
                 <h1>Hello!</h1>
                 <p>My name is Arjie. </p>
@@ -42,11 +41,19 @@ class App extends Component {
                 <Projects />
                 <hr />
                 <SocialProfiles />
-            </div>            
+            </div>
         )
-    }    
+    }
+}
+/*
+const AppWithHeader = () => {
+    return (
+        <Header Component={App}></Header>
+    )
 }
 
-export default App;
+export default AppWithHeader;
+*/
 
+export default App;
 
