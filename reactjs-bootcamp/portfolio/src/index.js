@@ -5,51 +5,17 @@ import { createBrowserHistory } from 'history';
 import Header from './components/Header';
 import App from './components/App';
 import Jokes from './components/Jokes';
+import MusicMaster from './projects/music-master';
 import './index.css';
 
-//const history = createBrowserHistory();
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
-//root.render(<App />);
+
 root.render(
     <BrowserRouter history={createBrowserHistory()}>
         <Routes>
             <Route path='/' element={<Header><App /></Header>} />
             <Route path='/jokes' element={<Header><Jokes /></Header>} />
+            <Route path='/music-master' element={<Header><MusicMaster /></Header>} />            
         </Routes>
     </BrowserRouter>
-)
-/*
-new Promise(resolve => {
-    setTimeout(() => {
-        console.log('Bears');
-        resolve();
-    }, 2000);
-})
-.then(() => {
-    console.log('Beets');
-    console.log('Battlestar Galactica');
-});
-*/
-/*
-new Promise(resolve => {
-    setTimeout(() => {
-        resolve('Bears, Beets, Battlestar Galactica');
-    }, 2000);
-})
-.then(quote => {
-    console.log(quote);
-});
-*/
-/*
-new Promise((resolve, reject) => {
-    return reject(new Error('No bears'));
-    setTimeout(() => {
-        resolve('Bears, Beets, Battlestar Galactica');
-    }, 2000);
-})
-.then(quote => {
-    console.log(quote);
-})
-.catch(error => console.log('error', error));
-*/
+);
