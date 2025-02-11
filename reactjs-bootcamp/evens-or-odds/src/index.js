@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, isPlainObject } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import App from './components/App';
 import './index.css';
@@ -14,4 +15,8 @@ store.subscribe(() => {
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+);
