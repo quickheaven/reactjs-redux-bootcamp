@@ -2,7 +2,7 @@ import { SET_GAME_STARTED, SET_INSTRUCTIONS_EXPANDED } from '../actions/types';
 
 const DEFAULT_SETTINGS = {
     gameStarted: false,
-    instructionExpanded: false
+    instructionsExpanded: false
 }
 
 const rootReducer = (state = DEFAULT_SETTINGS, action) => {
@@ -17,7 +17,7 @@ const rootReducer = (state = DEFAULT_SETTINGS, action) => {
         case SET_INSTRUCTIONS_EXPANDED:
             return {
                 ...state,
-                gameStarted: state.gameStarted
+                instructionsExpanded: action.instructionsExpanded
             };
         default:
             return state;

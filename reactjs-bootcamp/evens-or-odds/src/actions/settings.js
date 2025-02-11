@@ -17,13 +17,13 @@ export const cancelGame = () => {
 export const expandInstructions = () => {
     return {
         type: SET_INSTRUCTIONS_EXPANDED,
-        instructionExpanded: true
+        instructionsExpanded: true
     };
 }
 
 export const collapseInstructions = () => {
     return {
         type: SET_INSTRUCTIONS_EXPANDED,
-        instructionExpanded: false
+        instructionsExpanded: false
     };
 }
