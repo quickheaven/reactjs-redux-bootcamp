@@ -50,16 +50,18 @@ const mapStateProps = state => {
 //     return {
 //         startGame: () => dispatch(startGame()),
 //         cancelGame: () => dispatch(cancelGame()),
-//         fetchNewDeck: () => dispatch(fetchNewDeck())
+//         fetchNewDeck: () => fetchNewDeck(dispatch)
 //     };
 // }
 
 const componentConnector = connect(
     mapStateProps, 
     {
-        startGame, cancelGame, fetchNewDeck
-    })
-;
+        startGame, 
+        cancelGame, 
+        fetchNewDeck
+    }
+);
 
 export default componentConnector(App);
 
