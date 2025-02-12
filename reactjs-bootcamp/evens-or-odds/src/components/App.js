@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { startGame, cancelGame } from '../actions/settings';
-import { fetchDeckResult } from '../actions/decks';
+import { fetchNewDeck } from '../actions/decks';
+import fetchStates from '../reducers/fetchStates';
 import Instructions from './Instructions';
 
 
@@ -9,14 +10,20 @@ class App extends Component {
 
     startGame = () => {
         this.props.startGame();
-
-        fetch('https://www.deckofcardsapi.com/api/deck/new/shuffle')
-            .then(response => response.json())
-            .then(json => this.props.fetchDeckResult(json));
+        this.props.fetchNewDeck();
     }
 
     render() {
         console.log('this', this);
+
+        if (this.props.fetchState === fetchStates.error) {
+            return (
+                <div>
+                    <p>Please try reloading the app. An error occurred.</p>
+                    <p>{this.props.message}</p>
+                </div>
+            )
+        }
 
         return (
             <div>
@@ -46,18 +53,28 @@ class App extends Component {
 const mapStateProps = state => {
     console.log('state', state);
 
-    return { gameStarted: state.gameStarted };
+    // return { gameStarted: state.gameStarted, fetchState: state.fetchState, message: state.message };
+    const { gameStarted, fetchState, message } = state;
+
+    return { gameStarted, fetchState, message };
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        startGame: () => dispatch(startGame()),
-        cancelGame: () => dispatch(cancelGame()),
-        fetchDeckResult: deckJson => dispatch(fetchDeckResult(deckJson))
-    };
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         startGame: () => dispatch(startGame()),
+//         cancelGame: () => dispatch(cancelGame()),
+//         fetchNewDeck: () => fetchNewDeck(dispatch)
+//     };
+// }
 
-const componentConnector = connect(mapStateProps, mapDispatchToProps);
+const componentConnector = connect(
+    mapStateProps,
+    {
+        startGame,
+        cancelGame,
+        fetchNewDeck
+    }
+);
 
 export default componentConnector(App);
 
