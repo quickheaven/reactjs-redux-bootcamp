@@ -54,7 +54,15 @@ const mapStateProps = state => {
     console.log('state', state);
 
     // return { gameStarted: state.gameStarted, fetchState: state.fetchState, message: state.message };
-    const { gameStarted, fetchState, message } = state;
+    // const { gameStarted, fetchState, message } = state;
+
+    // const { gameStarted } = state.settings;
+    // const { fetchState, message } = state.deck;
+
+    const {
+        settings: { gameStarted },
+        deck: { fetchState, message }
+    } = state;
 
     return { gameStarted, fetchState, message };
 }
