@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { fetchDrawCard } from "../actions/decks";
 
 const DrawCard = ({ deck_id, fetchDrawCard }) => {
-    console.log('DrawCard deck_id', deck_id, ' fetchDrawCard ', fetchDrawCard);
+    //console.log('DrawCard deck_id', deck_id, ' fetchDrawCard ', fetchDrawCard);
 
     return (
         <div>

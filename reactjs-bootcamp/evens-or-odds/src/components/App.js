@@ -5,6 +5,7 @@ import { fetchNewDeck } from '../actions/decks';
 import fetchStates from '../reducers/fetchStates';
 import Instructions from './Instructions';
 import DrawCard from './DrawCard';
+import Card from './Card';
 
 
 class App extends Component {
@@ -36,6 +37,8 @@ class App extends Component {
                             <br />
                             <DrawCard />
                             <hr />
+                            <Card />
+                            <hr />
                             <button onClick={this.props.cancelGame}>Cancel Game</button>
                         </div>
                     ) : (
@@ -54,7 +57,7 @@ class App extends Component {
 }
 
 const mapStateProps = state => {
-    console.log('state', state);
+    // console.log('state', state);
 
     // return { gameStarted: state.gameStarted, fetchState: state.fetchState, message: state.message };
     // const { gameStarted, fetchState, message } = state;

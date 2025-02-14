@@ -10,7 +10,7 @@ const DEFAULT_DECK = {
 }
 
 const deckReducer = (state = DEFAULT_DECK, action) => {
-    console.log('deckReducer state', state, 'action', action);
+    // console.log('deckReducer state', state, 'action', action);
     let remaining, deck_id, cards;
 
     switch (action.type) {
@@ -35,7 +35,7 @@ const deckReducer = (state = DEFAULT_DECK, action) => {
                 fetchState: fetchStates.error
             };
         case DECK_DRAW.FETCH_SUCCESS:
-            ({ remaining, deck_id } = action);
+            ({ cards, remaining } = action);
             return {
                 ...state,
                 cards,

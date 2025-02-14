@@ -9,7 +9,7 @@ const DEFAULT_SETTINGS = {
 }
 
 const settingsReducer = (state = DEFAULT_SETTINGS, action) => {
-    console.log('settingsReducer state', state, 'action', action);
+    // console.log('settingsReducer state', state, 'action', action);
 
     switch (action.type) {
         case SET_GAME_STARTED:
