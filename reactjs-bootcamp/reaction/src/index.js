@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import PubSub from './pubsub';
 import App from './components/App';
+import { newMessage } from './actions/messages';
 import './index.css';
 
 
@@ -26,7 +27,7 @@ pubsub.addListener({
 });
 
 setTimeout(() => {
-    pubsub.publish({ type: 'foo', value: 'bar'});
+    pubsub.publish(newMessage('Hello world!'));
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
