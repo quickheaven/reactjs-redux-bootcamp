@@ -1,5 +1,4 @@
 import React, { Profiler } from 'react';
-import ReactDOM from 'react-dom/client';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
@@ -30,12 +29,25 @@ pubsub.addListener({
 });
 
 setTimeout(() => {
-    pubsub.publish(newMessage({text: 'Hello world!', username: 'Bob'}));
+    pubsub.publish(newMessage({ text: 'Hello world!', username: 'Bob' }));
 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+/*
+const Reaction = () => {
+    return (
+        <Provider store={store}>
+        <PubSubContext.Provider value={{ pubsub }}>
+            <App />
+        </PubSubContext.Provider>
+    </Provider>
+    );
+};
 
-root.render(
+export default Reaction;
+*/
+
+export default () =>
+(
     <Provider store={store}>
         <PubSubContext.Provider value={{ pubsub }}>
             <App />
