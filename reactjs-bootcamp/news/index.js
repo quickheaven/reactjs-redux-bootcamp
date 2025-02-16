@@ -40,7 +40,27 @@ app.get('/topstories', (req, res, next) => {
                 return next(new Error('Error requesting top stories'));
             }
 
-            res.json(JSON.parse(body));
+            const topStories = JSON.parse(body);
+            const limit = 10;
+
+            Promise.all(
+                topStories.slice(0, limit).map(story => {
+                    return new Promise((resolve, reject) => {
+                        request(
+                            { url: `https://hacker-news.firebaseio.com/v0/item/${story}.json` },
+                            (error, response, body) => {
+                                if (error || response.statusCode !== 200) {
+                                    return reject(new Error('Error requesting story items'));
+                                }
+                                resolve(JSON.parse(body));
+                            }
+                        );
+                    })
+                })
+            ).then(fullTopStories => {
+                res.json(fullTopStories);
+            })
+            .catch(error => next(error));
         }
     );
 });
@@ -48,7 +68,6 @@ app.get('/topstories', (req, res, next) => {
 app.use((err, req, res, next) => {
     res.status(500).json({ type: 'error', message: err.message });
 });
-
 
 
 const PORT = 3000;
