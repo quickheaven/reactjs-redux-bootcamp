@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PublishMessage from './PublishMessage';
+import PublishMessage  from './PublishMessage';
 import MessageBoard from './MessageBoard';
 import SetUsername from './SetUsername';
 
