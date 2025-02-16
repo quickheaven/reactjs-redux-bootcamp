@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { PubSubContext } from "../pubsub";
 import { newMessage } from "../actions/messages";
 
@@ -8,7 +9,10 @@ class PublishMessage extends Component {
     updateText = event => this.setState({ text: event.target.value });
 
     publishMessage = () => {
-        this.context.pubsub.publish(newMessage(this.state.text));
+        const { text } = this.state;
+        const { username } = this.props;
+
+        this.context.pubsub.publish(newMessage({ text: this.state.text, username }));
     }
 
     handleKeyPress = event => {
@@ -33,4 +37,4 @@ class PublishMessage extends Component {
 
 // PublishMessage.contextType = PubSubContext; // define in the class.
 
-export default PublishMessage;
+export default connect(({ username }) => ({ username }))(PublishMessage);

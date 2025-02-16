@@ -30,7 +30,7 @@ pubsub.addListener({
 });
 
 setTimeout(() => {
-    pubsub.publish(newMessage('Hello world!'));
+    pubsub.publish(newMessage({text: 'Hello world!', username: 'Bob'}));
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
