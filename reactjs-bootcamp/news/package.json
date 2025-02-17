@@ -1,9 +1,13 @@
 {
   "name": "news",
   "version": "1.0.0",
-  "main": "index.js",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build-client && node ./",
+    "dev": "nodemon ./",
+    "dev-client": "parcel client/src/index.html",
+    "build-client": "parcel build client/src/index.html --dist-dir client/dist",
+    "start-client": "npm run build && live-server client/dist"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +15,15 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "live-server": "^1.2.2",
+    "parcel": "^2.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "process": "^0.11.10"
   }
 }
