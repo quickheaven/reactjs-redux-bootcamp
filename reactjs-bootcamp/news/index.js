@@ -1,6 +1,8 @@
 const express = require('express');
 const request = require('request');
-const stories = require('./stories')
+const path = require('path');
+const stories = require('./stories');
+
 
 const app = express();
 
@@ -16,6 +18,7 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.get('/ping', (req, res) => {
     res.send('pong!');
