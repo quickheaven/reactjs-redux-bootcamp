@@ -6,3 +6,23 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
+
+/*
+function createObject() {
+    console.log('outermost this', this);
+
+    return {
+        arrowFunction: () => {
+            console.log('arrowFunction this', this);
+        },
+        functionKeywordFunction: function () {
+            console.log('functionKeyword this', this);
+        }
+    }
+}
+
+const obj = createObject();
+console.log('obj', obj);
+obj.arrowFunction();
+obj.functionKeywordFunction();
+*/

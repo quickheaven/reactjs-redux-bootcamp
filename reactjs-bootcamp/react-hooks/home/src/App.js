@@ -2,7 +2,9 @@ import { useState } from "react";
 import Joke from "./Joke";
 import Stories from "./Stories";
 
+// The function keyword creates a special this object that refers to the object where it was declared and the arrow function does not such thing.
 function App() {
+// const App = () => {
 
   const [userQuery, setUserQuery] = useState('');
 
