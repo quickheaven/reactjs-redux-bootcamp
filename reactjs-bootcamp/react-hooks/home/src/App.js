@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Joke from "./Joke";
 import Stories from "./Stories";
+import Tasks from "./Tasks";
 
 // The function keyword creates a special this object that refers to the object where it was declared and the arrow function does not such thing.
 function App() {
@@ -18,9 +19,9 @@ function App() {
     }
   }
 
-  const updateUserQuery = event => {
-    console.log('userQuery', userQuery);
+  const updateUserQuery = event => {    
     setUserQuery(event.target.value);
+    console.log('userQuery', userQuery);
   }
 
   return (
@@ -36,6 +37,8 @@ function App() {
       </div>
       <hr />
       <Joke />
+      <hr />
+      <Tasks />
       <hr />
       <Stories />
     </div>
