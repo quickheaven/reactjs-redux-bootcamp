@@ -2,6 +2,7 @@ import { useState } from "react";
 import Joke from "./Joke";
 import Stories from "./Stories";
 import Tasks from "./Tasks";
+import Gallery from "./Gallery";
 
 // The function keyword creates a special this object that refers to the object where it was declared and the arrow function does not such thing.
 function App() {
@@ -39,6 +40,8 @@ function App() {
       <Joke />
       <hr />
       <Tasks />
+      <hr />
+      <Gallery />
       <hr />
       <Stories />
     </div>
