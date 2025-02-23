@@ -6,12 +6,17 @@ import Gallery from "./Gallery";
 
 // The function keyword creates a special this object that refers to the object where it was declared and the arrow function does not such thing.
 function App() {
-// const App = () => {
+  // const App = () => {
 
   const [userQuery, setUserQuery] = useState('');
+  const [showGallery, setShowGallery] = useState(true);
 
   const searchQuery = () => {
     window.open(`https://www.google.com/search?q=${userQuery}`, '_blank');
+  }
+
+  const toggleShowGallery = () => {
+    setShowGallery(!showGallery);
   }
 
   const handleKeyPress = event => {
@@ -20,7 +25,7 @@ function App() {
     }
   }
 
-  const updateUserQuery = event => {    
+  const updateUserQuery = event => {
     setUserQuery(event.target.value);
     console.log('userQuery', userQuery);
   }
@@ -41,7 +46,14 @@ function App() {
       <hr />
       <Tasks />
       <hr />
-      <Gallery />
+      <div>
+        {
+          showGallery ? <Gallery /> : null
+        }
+        <button onClick={toggleShowGallery}>
+          {showGallery ? 'Hide' : 'Show'} Gallery
+        </button>
+      </div>
       <hr />
       <Stories />
     </div>
