@@ -1,4 +1,5 @@
 # React JS and Redux Bootcamp - Master React Web Development
+
 ```
 nvm ls
 
@@ -35,15 +36,15 @@ import SocialProfiles from './SocialProfiles';
 <SocialProfiles />
 ```
 
-Summary:
+### Summary:
 
-Components: reusable pieces of React code to control part of the user interface. Components capture the structure of UI, and can have internal data to track the user behavior throughout the lifetime of the app.
+**Components**: reusable pieces of React code to control part of the user interface. Components capture the structure of UI, and can have internal data to track the user behavior throughout the lifetime of the app.
 
-State: dynamic data in a React component. This is often used to track variables that will be re-rendered in the UI based on events that occur in the application.
+**State**: dynamic data in a React component. This is often used to track variables that will be re-rendered in the UI based on events that occur in the application.
 
 👉 Remember the React State Rule: Never Directly Modify State. Instead use the `this.setState` method.
 
-Props: data in a React component that gets passed down from its parent. In the parent component, it will pass data down to the child component through attributes in the child component’s JSX.
+**Props**: data in a React component that gets passed down from its parent. In the parent component, it will pass data down to the child component through attributes in the child component’s JSX.
 
 
 ## Section 3: Breaking down React.
@@ -110,7 +111,7 @@ Applying routing to the application. With react-router, a single page React appl
 
 Using higher-order components. A higher-order component is one that takes another component as an input. The idea is to treat the component like a function. Have one component as input, and then output an entirely new component based on that input, with new properties, methods, and/or JSX!
 
-## Section 5: Core React Project: MusicMaster
+## Section 5: Core React Project: Music Master
 
 ```
 mkdir music-master
@@ -140,20 +141,23 @@ In addition, another main goal of this section was to get more practice with the
 Redux - storage management:
 Component (dispatcher) > Action > Reducer > Store
 Unidirectional Flow
-``
-npm i @reduxjs/toolkit@1.8.6 react-redux@8.0.4 --save
-``
 
 ```
-            return {
-                gameStarted: state.gameStarted,
-                instructionExpanded: action.instructionExpanded
-            };
-```		
-			return {
-                ...state,
-                gameStarted: state.gameStarted
-            };
+npm i @reduxjs/toolkit@1.8.6 react-redux@8.0.4 --save
+```
+
+```
+return {
+    gameStarted: state.gameStarted,
+    instructionExpanded: action.instructionExpanded
+};
+```
+
+```
+return {
+    ...state,
+    gameStarted: state.gameStarted
+};
 ```
 
 Steps creating a new Component in ReactJS:
@@ -164,7 +168,10 @@ Steps creating a new Component in ReactJS:
 5. create ./component
 6. add the new component in App.js
 
+
+```
 rm -rf node_modules
+```
 
 This section introduced Redux. There are handful of topics related to this whole new layer of building a React application:
 
@@ -205,39 +212,39 @@ The Redux devtools is an extension that allows you to examine the redux store st
 
 ## Section 9: Redux Review
 
-Redux: A state management library that collects the data for a JavaScript application (most often a React app).
+**Redux**: A state management library that collects the data for a JavaScript application (most often a React app).
 
-Store: An object which collects the data for the entire application.
+**Store**: An object which collects the data for the entire application.
 
-Reducers: Functions which describe how sections of the store should update. They respond to action objects, and take the information from certain actions to update their part of the store.
+**Reducers**: Functions which describe how sections of the store should update. They respond to action objects, and take the information from certain actions to update their part of the store.
 
-Actions: Plain objects which go through the redux system, that trigger reducers. They must have a `type` field, so that they can be identified by reducers. Actions will contain payloads of information that reducers can use.
+**Actions**: Plain objects which go through the redux system, that trigger reducers. They must have a `type` field, so that they can be identified by reducers. Actions will contain payloads of information that reducers can use.
 
-Action creators: Functions that generate action objects.
+**Action creators**: Functions that generate action objects.
 
-connect(): A function from the react-redux module which allows you to make the connection between the redux store and a React component. This returns a function itself, the “componentConnector”, in which you pass the actual component name.
+**connect()**: A function from the react-redux module which allows you to make the connection between the redux store and a React component. This returns a function itself, the “componentConnector”, in which you pass the actual component name.
 
-mapStateToProps: The first argument to the connect function. Allows you to specify what data the component should have from the redux store. You map the redux store state to the props object of the component.
+**mapStateToProps**: The first argument to the connect function. Allows you to specify what data the component should have from the redux store. You map the redux store state to the props object of the component.
 
-mapDispatchToProps: The second argument to the connect function. Allows you to specify what methods should be made available to the component (through props), that will be able to dispatch the results of action creators to the store.
+**mapDispatchToProps**: The second argument to the connect function. Allows you to specify what methods should be made available to the component (through props), that will be able to dispatch the results of action creators to the store.
 
-Async actions: Asynchronous actions are ones that don’t immediately return action objects. They can have functionality that calls the dispatch method at various places. For example, an async action, wrapped around a fetch, can call dispatch for a successful fetch using the resulting json, or call dispatch for a failed fetch using the error object.
+**Async actions**: Asynchronous actions are ones that don’t immediately return action objects. They can have functionality that calls the dispatch method at various places. For example, an async action, wrapped around a fetch, can call dispatch for a successful fetch using the resulting json, or call dispatch for a failed fetch using the error object.
 
-Redux middleware: Code that runs in between the point an action gets dispatched, and that action reaches the redux reducers.
+**Redux middleware**: Code that runs in between the point an action gets dispatched, and that action reaches the redux reducers.
 
-Thunk: Redux middleware designed to support asynchronous actions. This middleware will hold onto the redux dispatch method, and call dispatch once the data from an async action is ready to be dispatched.
+**Thunk**: Redux middleware designed to support asynchronous actions. This middleware will hold onto the redux dispatch method, and call dispatch once the data from an async action is ready to be dispatched.
 
-combineReducers(): A function which can take multiple reducer functions and combine them into one overall reducer function.
+**combineReducers()**: A function which can take multiple reducer functions and combine them into one overall reducer function.
 
-Same-origin Policy and CORS: The same-origin policy is a check that the browser implements to ensure that your code isn’t making fetches to unknown origins. Only servers that allow your frontend address as an origin can pass the same origin policy. This concept is also known as CORS (cross-origin resource sharing), which is the mechanism which enforces the matching of origins between the browser client and server.
+**Same-origin Policy and CORS**: The same-origin policy is a check that the browser implements to ensure that your code isn’t making fetches to unknown origins. Only servers that allow your frontend address as an origin can pass the same origin policy. This concept is also known as CORS (cross-origin resource sharing), which is the mechanism which enforces the matching of origins between the browser client and server.
 
-Local Storage: A key-value structure provided by the browser to store items of information across browser sessions. Don’t store sensitive info in local storage! The storage data is accessible by any web application on the browser.
+**Local Storage**:* A key-value structure provided by the browser to store items of information across browser sessions. Don’t store sensitive info in local storage! The storage data is accessible by any web application on the browser.
 
-Pub/Sub: A software pattern that allows publishers to send information to channels that subscribers will listen to. A good networking option that can reduce the usual approach of keeping a list of all addresses that are connected to the network.
+**Pub/Sub**: A software pattern that allows publishers to send information to channels that subscribers will listen to. A good networking option that can reduce the usual approach of keeping a list of all addresses that are connected to the network.
 
-React Context: A way to share data between many React components without having to pass that data down manually through props. A component will look to the nearest parent component, that is a context Provider, to get the values that it can use for its own component `context` field.
+**React Context**: A way to share data between many React components without having to pass that data down manually through props. A component will look to the nearest parent component, that is a context Provider, to get the values that it can use for its own component `context` field.
 
-Redux Devtools: A great browser extension that allows you to read your redux store’s state at any moment, and see the types of dispatching actions in real-time.
+**Redux Devtools:** A great browser extension that allows you to read your redux store’s state at any moment, and see the types of dispatching actions in real-time.
 
 "Store is a collections of all Reducers; And Reducers are configured to responds to Actions object. Those actions are dispatched to the overrall store from a functionality through Components; The Components have the ability to dispatch actions objects to make changes in the store. They also have the ability to read Redux stores data."
 
@@ -253,13 +260,13 @@ npm i request@2.88.0 --save
 
 Here’s a highlight reel the main concepts and lessons from this section:
 
-Express is a framework built on top of Node.js used for starting servers and building web APIs.
+**Express** is a framework built on top of Node.js used for starting servers and building web APIs.
 
-Express middleware is functionality that runs before every request, to process information about the request, add headers to the response, perform logging, and any other kind of useful functionality.
+**Express middleware** is functionality that runs before every request, to process information about the request, add headers to the response, perform logging, and any other kind of useful functionality.
 
-CORS: Adding the `Access-Control-Allow-Origin` with the `*` argument will allow any frontend addresses to be considered as part of the server’s origin. This helps get past the same origin policy check implemented by the browser.
+**CORS**: Adding the `Access-Control-Allow-Origin` with the `*` argument will allow any frontend addresses to be considered as part of the server’s origin. This helps get past the same origin policy check implemented by the browser.
 
-API Wrappers are servers that perform inner requests to other APIs. These can be used to combine multiple API requests into one overall request, to add a more open `Access-Control-Allow-Origin` header, and to accomplish other custom functionality!
+**API Wrappers** are servers that perform inner requests to other APIs. These can be used to combine multiple API requests into one overall request, to add a more open `Access-Control-Allow-Origin` header, and to accomplish other custom functionality!
 
 Serving a React Frontend can occur within the same server as its backend API. Serve a static directory to the relative path where your React code is built.
 
