@@ -1,5 +1,10 @@
 # React JS and Redux Bootcamp - Master React Web Development
 
+<img src="./certificate.jpg" width="400" height="300" />
+<hr />
+
+## Section 2:  First React Application
+
 ```
 nvm ls
 
@@ -11,7 +16,6 @@ npm --version
 
 npx create-react-app portfolio
 ```
-## Section 2:  First React Application
 
 React Project Structure
 index.html > index.js > App.js
@@ -84,32 +88,35 @@ There are three core pillars to a web application: html, css, and JavaScript. Re
 
 The client-server architecture describes the relationship between a client requesting the documents for a web app (html, css, js) from a server computer that can respond with them.
 
-Bundling is the process of taking many JavaScript files and combining them into one giant JavaScript file for the html to refer to. This is useful because the browser doesn’t natively support the import/export system that is used in React projects.
+**Bundling** is the process of taking many JavaScript files and combining them into one giant JavaScript file for the html to refer to. This is useful because the browser doesn’t natively support the import/export system that is used in React projects.
 
-Parcel-bundler is a tool that achieves bundling.
+**Parcel-bundler** is a tool that achieves bundling.
 
-Transpiling is the process of translating modern JavaScript code into a syntax that the browser actually supports. This is necessary because, as the JavaScript language evolves and adds new features, the browser must keep up and support those additions. Therefore, the feature set that the browser can support will always be a bit behind the overall JavaScript language.
+**Transpiling** is the process of translating modern JavaScript code into a syntax that the browser actually supports. This is necessary because, as the JavaScript language evolves and adds new features, the browser must keep up and support those additions. Therefore, the feature set that the browser can support will always be a bit behind the overall JavaScript language.
 
-Babel is a tool that achieves transpilation.
+**Babel** is a tool that achieves transpilation.
 
 
 ## Section 4: Continued Main React Concepts
 
-Lifecycle Methods - Fire throughout different phases of a component's life
-componentDidMount() - Fires when the component is inserted into the DOM
-componentWillUnmount() - Fires when the component is going to leave the DOM
+**Lifecycle Methods** - Fire throughout different phases of a component's life.
 
-React Router
+**componentDidMount()** - Fires when the component is inserted into the DOM \
+**componentWillUnmount()** - Fires when the component is going to leave the DOM
+
+**React Router**
+
 ```
 npm i react-router-dom@6.4.2 --save
 npm i history@5.3.0 --save
 ```
-Summary
+**Summary**
+
 Using the fetch method to make API calls. With the fetch method, React app can make HTTP requests to API services. This is an excellent way to add a ton of new content to your React application.
 
-Applying routing to the application. With react-router, a single page React application can transform into one with multiple pages of different content. Each page matches a url path of the application to a different component.
+Applying routing to the application. With **react-router**, a single page React application can transform into one with multiple pages of different content. Each page matches a url path of the application to a different component.
 
-Using higher-order components. A higher-order component is one that takes another component as an input. The idea is to treat the component like a function. Have one component as input, and then output an entirely new component based on that input, with new properties, methods, and/or JSX!
+Using higher-order components. A **higher-order component** is one that takes another component as an input. The idea is to treat the component like a function. Have one component as input, and then output an entirely new component based on that input, with new properties, methods, and/or JSX!
 
 ## Section 5: Core React Project: Music Master
 
@@ -175,25 +182,25 @@ rm -rf node_modules
 
 This section introduced Redux. There are handful of topics related to this whole new layer of building a React application:
 
-Redux is a state management technology. It handles all the underlying data for your React application by enforcing a universal flow of data - that components can read from and add to using dispatchable actions.
+**Redux** is a state management technology. It handles all the underlying data for your React application by enforcing a universal flow of data - that components can read from and add to using dispatchable actions.
 
-The Store is the global object that collects all the data for a React application.
+The **Store** is the global object that collects all the data for a React application.
 
-Reducers split up the store and describe how sections of the store should update.
+**Reducers** split up the store and describe how sections of the store should update.
 
-Actions are objects full of data that the reducers listen to. These actions are dispatchable by components. And reducers will then use the action data to update the redux store.
+**Actions** are objects full of data that the reducers listen to. These actions are dispatchable by components. And reducers will then use the action data to update the redux store.
 
-React Redux provides the connection between the redux system and the React components. Particularly, the Provider component gives each component access to the redux store. And the connect function allows each component to customize what parts of the redux store it wants to read, and what actions the component should be able to dispatch.
+**React Redux** provides the connection between the redux system and the React components. Particularly, the Provider component gives each component access to the redux store. And the connect function allows each component to customize what parts of the redux store it wants to read, and what actions the component should be able to dispatch.
 
-MapStateToProps, parameter one of the react-redux connect function customizes which part of the redux store the component will have access to.
+**MapStateToProps**, parameter one of the react-redux connect function customizes which part of the redux store the component will have access to.
 
-MapDispatchToProps, parameter two of the react-redux connect function specifies which action creators the component should be able to dispatch.
+**MapDispatchToProps**, parameter two of the react-redux connect function specifies which action creators the component should be able to dispatch.
 
-Redux Middleware code runs in between the point that an action gets dispatched and the reducers receive the action objects. Think of it as extensions for the redux system; it’s useful for adding new capabilities to the underlying redux logic. One such middleware is redux-thunk.
+**Redux Middleware** code runs in between the point that an action gets dispatched and the reducers receive the action objects. Think of it as extensions for the redux system; it’s useful for adding new capabilities to the underlying redux logic. One such middleware is redux-thunk.
 
-Redux thunk is a library that allows for asynchronous actions to be dispatched. Normally, actions are plain objects. But in the case of using the fetch method, to make an api call, an asynchronous action is useful in order to dispatch different kinds of actions based on the result of the api call.
+**Redux thunk** is a library that allows for asynchronous actions to be dispatched. Normally, actions are plain objects. But in the case of using the fetch method, to make an api call, an asynchronous action is useful in order to dispatch different kinds of actions based on the result of the api call.
 
-LocalStorage is a JavaScript object that can be used to store items in a key-value structure within the browser.
+**LocalStorage** is a JavaScript object that can be used to store items in a key-value structure within the browser.
 
 ## Section 8: Redux Project Reaction
 
@@ -201,13 +208,13 @@ As usual, this summary will highlight the main concepts and lessons from this se
 
 This section introduced quite a few new topics:
 
-Pub/Sub is a pattern that enables communication in a network based on publishing messages to channels, and subscribing to those messages.
+**Pub/Sub** is a pattern that enables communication in a network based on publishing messages to channels, and subscribing to those messages.
 
-React context is a way to share data between many components, without having to manually pass objects down through props.
+**React context** is a way to share data between many components, without having to manually pass objects down through props.
 
-The Context Provider Component uses a value property to provide data to any nested component through its context field.
+The **Context Provider Component** uses a value property to provide data to any nested component through its context field.
 
-The Redux devtools is an extension that allows you to examine the redux store state, and see actions being dispatched in real time.
+The **Redux devtools** is an extension that allows you to examine the redux store state, and see actions being dispatched in real time.
 
 
 ## Section 9: Redux Review
@@ -246,7 +253,7 @@ The Redux devtools is an extension that allows you to examine the redux store st
 
 **Redux Devtools:** A great browser extension that allows you to read your redux store’s state at any moment, and see the types of dispatching actions in real-time.
 
-"Store is a collections of all Reducers; And Reducers are configured to responds to Actions object. Those actions are dispatched to the overrall store from a functionality through Components; The Components have the ability to dispatch actions objects to make changes in the store. They also have the ability to read Redux stores data."
+*"Store is a collections of all Reducers; And Reducers are configured to responds to Actions object. Those actions are dispatched to the overrall store from a functionality through Components; The Components have the ability to dispatch actions objects to make changes in the store. They also have the ability to read Redux stores data."*
 
 
 ## Section 10: Create Backend APIs for React Apps
@@ -290,7 +297,6 @@ npx create-react-app home
 ```
 
 ## Section 13: React Hooks Section 2 - Hooks Under the Hood
-
 
 ## Section 14: React Hooks Section 3 - Reflection on the Why of Hooks
 
