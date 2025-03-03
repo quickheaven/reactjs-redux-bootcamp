@@ -1,7 +1,7 @@
 # React JS and Redux Bootcamp - Master React Web Development
-<a hef="https://www.udemy.com/certificate/UC-3aca5883-b006-41a1-9f03-4c349c6fc8e7/">
-	<img src="./certificate.jpg" width="400" height="300" />
-</a>
+
+<img src="./certificate.jpg" width="400" height="300" />
+
 <hr />
 
 ## Section 2:  First React Application
