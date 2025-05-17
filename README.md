@@ -302,12 +302,40 @@ npx create-react-app home
 ## Section 14: React Hooks Section 3 - Reflection on the Why of Hooks
 
 ## Section 15: In-Depth Javascript Content
+### Functions - Declaration vs Expression
+#### Function Declaration
+```
+function calculateTip(price, percentage) {
+    return (percentage / 100) * price;
+}
+```
+#### Function Expression
+allows the function to be nameless
+```
+var divideByN = function(number, n) {
+    return number / n;
+}
 
-
-
-
-
-
+divideByN(18, 3)
+```
+##### Anonymous function
+```
+(function() {
+   console.log('I am an expression');
+})
+```
+To call the anonymous function, simply add an open-close parenthesis
+```
+(function() {
+   console.log('I am an expression');
+})();
+```
+dividedByN via anonymous function
+```
+(function(number, n) {
+   return number / n;
+})(18, 3);
+```
 
 
 
