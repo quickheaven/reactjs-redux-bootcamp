@@ -336,6 +336,26 @@ dividedByN via anonymous function
    return number / n;
 })(18, 3);
 ```
+### Arrow functions
+The arrow function is shorter alternative of writing function expression.
+```
+var arrowFunc = () => {
+    console.log('hello from an arrow function');
+}
+
+arrowFunc();
+```
+
+```
+var createLegInfo = info => {
+    return 'info' + info;
+}
+createLogInfo('foobar');
+```
+```
+var createLegInfo = info => return 'info' + info;
+createLogInfo('foobar');
+```
 
 
 
